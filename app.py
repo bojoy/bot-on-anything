@@ -8,7 +8,8 @@ from multiprocessing import Pool
 
 from plugins.plugin_manager import PluginManager
 import os
-
+os.environ["http_proxy"] = "http://127.0.0.1:1080"
+os.environ["https_proxy"] = "http://127.0.0.1:1080"
 # 启动通道
 def start_process(channel_type, config_path):
     try:
@@ -27,10 +28,6 @@ def main():
     try:
         # load config
         config.load_config(args.config)
-
-        # add proxy to OS env
-        os.environ["http_proxy"] = config.conf().get("model").get("openai").get("proxy")
-        os.environ["https_proxy"] = config.conf().get("model").get("openai").get("proxy")
 
         model_type = config.conf().get("model").get("type")
         channel_type = config.conf().get("channel").get("type")
