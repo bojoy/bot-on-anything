@@ -7,9 +7,8 @@ from common import log, const
 from multiprocessing import Pool
 
 from plugins.plugin_manager import PluginManager
-import os
-os.environ["http_proxy"] = "http://127.0.0.1:1080"
-os.environ["https_proxy"] = "http://127.0.0.1:1080"
+
+
 # 启动通道
 def start_process(channel_type, config_path):
     try:
