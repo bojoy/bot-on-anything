@@ -9,9 +9,9 @@ import os
 
 robot = werobot.WeRoBot()
 robot.config['token'] = channel_conf(const.WECHAT_MP).get('token')
-robot.config["app_id"] = channel_conf(const.WECHAT_MP).get('token')
-robot.config["app_secret"] = channel_conf(const.WECHAT_MP).get('token')
-robot.config['encoding_aes_key'] = channel_conf(const.WECHAT_MP).get('token')
+robot.config["app_id"] = channel_conf(const.WECHAT_MP).get('app_id')
+robot.config["app_secret"] = channel_conf(const.WECHAT_MP).get('app_secret')
+robot.config['encoding_aes_key'] = channel_conf(const.WECHAT_MP).get('encoding_aes_key')
 thread_pool = ThreadPoolExecutor(max_workers=8)
 cache = {}
 
