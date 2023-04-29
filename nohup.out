@@ -1,0 +1,9 @@
+Load config success
+[INFO][2023-04-26 22:17:24][plugin_registry.py:23] - Plugin Selector_v0.1 registered
+[INFO][2023-04-26 22:17:24][log.py:32] - [Selector] inited
+█[INFO][2023-04-26 22:17:24][plugin_registry.py:23] - Plugin CreateImg_v0.1 registered
+Load config success
+[INFO][2023-04-26 22:17:24][log.py:34] - [MultiChannel] Start up chatgpt on terminal
+
+Please input your question
+User:

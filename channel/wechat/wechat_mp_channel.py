@@ -7,9 +7,11 @@ from channel.channel import Channel
 from concurrent.futures import ThreadPoolExecutor
 import os
 
-
-
-robot = werobot.WeRoBot(token=channel_conf(const.WECHAT_MP).get('token'))
+robot = werobot.WeRoBot()
+robot.config['token'] = channel_conf(const.WECHAT_MP).get('token')
+robot.config["app_id"] = channel_conf(const.WECHAT_MP).get('token')
+robot.config["app_secret"] = channel_conf(const.WECHAT_MP).get('token')
+robot.config['encoding_aes_key'] = channel_conf(const.WECHAT_MP).get('token')
 thread_pool = ThreadPoolExecutor(max_workers=8)
 cache = {}
 
@@ -87,3 +89,7 @@ class WechatSubsribeAccount(Channel):
                     return value.get("data")
                 return "还在处理中，请稍后再试"
         return "目前无等待回复信息，请输入对话"
+
+@robot.subscribe
+def subscribe_reply(message):
+    return '感谢关注！\n已接入ChatGPT服务，直接提问吧！'

@@ -43,7 +43,10 @@
 
     "wechat_mp": {
       "token": "YOUR TOKEN",
-      "port": "80"
+      "port": "80",
+      "app_id": "",
+      "app_secret": "",
+      "encoding_aes_key": ""
     },
     "wechat_com": {
       "wechat_token": "",
