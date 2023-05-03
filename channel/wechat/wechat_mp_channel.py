@@ -1,17 +1,20 @@
 import werobot
 import time
+
 from config import channel_conf
 from common import const
 from common.log import logger
 from channel.channel import Channel
 from concurrent.futures import ThreadPoolExecutor
+
+
 import os
 
-robot = werobot.WeRoBot()
-robot.config['token'] = channel_conf(const.WECHAT_MP).get('token')
-robot.config["app_id"] = channel_conf(const.WECHAT_MP).get('app_id')
-robot.config["app_secret"] = channel_conf(const.WECHAT_MP).get('app_secret')
-robot.config['encoding_aes_key'] = channel_conf(const.WECHAT_MP).get('encoding_aes_key')
+robot = werobot.WeRoBot(token=channel_conf(const.WECHAT_MP).get('token'))
+# robot.config["APP_ID"] = channel_conf(const.WECHAT_MP).get('app_id')
+# robot.config["APP_SECRET"] = channel_conf(const.WECHAT_MP).get('app_secret')
+# robot.config['ENCODING_AES_KEY'] = channel_conf(const.WECHAT_MP).get('encoding_aes_key')
+# client = robot.client
 thread_pool = ThreadPoolExecutor(max_workers=8)
 cache = {}
 
